@@ -35,6 +35,11 @@ class Controller:
 
             self.name = self.joystick.get_name()
 
+            if "Microsoft X-Box 360 pad" not in self.name:
+
+                print("ERROR: Gamepad in incorrect mode!")
+                exit(1)
+
         else:
 
             pass
