@@ -8,11 +8,12 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame                                   # Using to get data from gamepad controller.
 import subprocess
 
+
 def no_display():
 
     os.environ['SDL_VIDEODRIVER'] = 'dummy'     # Create "dummy display" for pygame.
     pygame.display.set_mode((1, 1))             # Set display mode.
-    pygame.init()                               # Start pygame.
+    # pygame.init()                               # Start pygame.
 
 
 class Controller:
@@ -25,10 +26,6 @@ class Controller:
         self.controller = controller
 
         self.joystick_count = pygame.joystick.get_count()
-
-        # self.analog_sticks = None
-        # self.triggers = None
-        # self.buttons = None
 
         if self.joystick_count > 0:
 
