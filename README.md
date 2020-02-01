@@ -29,11 +29,11 @@ while True:
 
     if button['x']:
 
-        controller.buzz(1)       # This function may require root. If no rumble is observed run program with sudo.
+        controller.buzz(1)              # This function may require root. If no rumble is observed run program with sudo.
 
     if button['y']:
 
-        controller.buzz(3)       # This function may require root. If no rumble is observed run program with sudo.
+        controller.buzz(3)              # This function may require root. If no rumble is observed run program with sudo.
 
     print(button)
     # print(button['a'], button['b'], button['x'], button['y'])
