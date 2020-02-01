@@ -7,6 +7,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 
 import pygame                                   # Using to get data from gamepad controller.
 import subprocess
+# import pygame.joystick
 
 
 def no_display():
