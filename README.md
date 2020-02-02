@@ -6,7 +6,7 @@ My gamepad library
 ```
 #!/usr/bin/python3
 
-import time
+from time import sleep
 import gamepad
 
 controller = gamepad.Controller(0)
@@ -14,33 +14,39 @@ controller = gamepad.Controller(0)
 while True:
 
     button = controller.get_buttons()
-
     joystick = controller.get_joysticks()
-
     trigger = controller.get_triggers()
 
-    if button['a']:
+    if controller.mode:
 
-        controller.rumble(10, 1)       # This function may require root. If no rumble is observed run program with sudo.
+        if button['a']:
 
-    if button['b']:
+            controller.rumble(10, 1)       # This function may require root. If no rumble is observed run program with sudo.
 
-        controller.rumble(100, 1)       # This function may require root. If no rumble is observed run program with sudo.
+        if button['b']:
 
-    if button['x']:
+            controller.rumble(100, 1)       # This function may require root. If no rumble is observed run program with sudo.
 
-        controller.buzz(1)              # This function may require root. If no rumble is observed run program with sudo.
+        if button['x']:
 
-    if button['y']:
+            controller.buzz(1)              # This function may require root. If no rumble is observed run program with sudo.
 
-        controller.buzz(3)              # This function may require root. If no rumble is observed run program with sudo.
+        if button['y']:
 
-    print(button)
-    # print(button['a'], button['b'], button['x'], button['y'])
+            controller.buzz(3)              # This function may require root. If no rumble is observed run program with sudo.
 
-    # print(joystick)
+        print(button)
+        # print(button['a'], button['b'], button['x'], button['y'])
 
-    # print(trigger)
+        # print(joystick)
 
-    time.sleep(0.01)
+        # print(trigger)
+
+    else:
+
+        print("Error: Controller in incorrect mode!")
+        controller.reset()
+
+    sleep(0.01)
+
 ```
