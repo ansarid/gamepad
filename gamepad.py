@@ -45,6 +45,7 @@ class Controller:
             self.name = self.joystick.get_name()
             self.check_mode()
         else:
+            self.name = None
             pass
 
     def check_mode(self):
