@@ -1,5 +1,5 @@
 # gamepad
-My gamepad library
+My gamepad python module.
 
 ## Example
 
